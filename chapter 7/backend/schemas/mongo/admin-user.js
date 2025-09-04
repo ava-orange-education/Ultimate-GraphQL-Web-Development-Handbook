@@ -63,7 +63,6 @@ userSchema.statics.verifyToken = async (token) => {
     if (decoded.exp && decoded.exp < currentTimestamp) {
       throw new Error("Token has expired");
     }
-
     // Extract and return relevant user data from the decoded token
     const { id, email, firstName, lastName } = decoded;
     // check whether user-name is present in system.

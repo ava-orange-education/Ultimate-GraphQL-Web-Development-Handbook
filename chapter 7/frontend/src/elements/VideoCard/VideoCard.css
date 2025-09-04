@@ -1,0 +1,67 @@
+/* src/components/VideoCard.css */
+
+.video-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  text-align: left;
+  width: 100%;
+  max-width: 250px;
+  min-width: 250px;
+  margin: 15px 15px 15px 0;
+  text-decoration: none; /* Ensure no underline on the whole card */
+  color: inherit;
+}
+
+.video-link {
+  text-decoration: none;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.video-details {
+  padding: 10px;
+}
+
+.video-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-description {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits the description to two lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-date {
+  font-size: 0.75rem;
+  color: #999;
+  display: block;
+  margin-top: 5px;
+}
+
+.video-container {
+  display: flex;
+}

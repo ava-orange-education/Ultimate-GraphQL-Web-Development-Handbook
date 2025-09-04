@@ -35,6 +35,9 @@ const videoStreamSchema = new mongoose.Schema({
     required: true,
     index: true,
   },
+  totalRating: { type: Number, default: 0 },
+  numberOfRaters: { type: Number, default: 0 },
+  averageRating: { type: Number, default: 0 },
   createdDate: {
     type: Date,
     default: Date.now,
