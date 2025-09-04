@@ -8,9 +8,6 @@
 
 import { authenticateGoogle } from "./passport.js";
 import AdminUser from "../schemas/mongo/admin-user.js";
-import "../config.js";
-
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL.toLowerCase();
 
 /**
  * Asynchronously signs up or logs in a user using Google authentication.
@@ -48,26 +45,23 @@ export const signUpGoogle = async (_, arg, ctx) => {
     // If not Error take user information
     const _json = data._json;
     // Deconstruct user information from _json data
-    let { email } = _json;
+    const { email } = _json;
     const firstName = _json.given_name;
     const lastName = _json.family_name;
 
     let accessToken = "";
     let message = "";
 
-    email = email.toLowerCase().replace(/ /gi, "");
-
     // Check if user is registered
     const userExist = await AdminUser.findOne({
-      email: email,
+      email: email.toLowerCase().replace(/ /gi, ""),
     });
 
     if (!userExist) {
       const newUser = await AdminUser.create({
-        email: email,
+        email: email.toLowerCase().replace(/ /gi, ""),
         firstName,
         lastName,
-        isAdmin: ADMIN_EMAIL === email,
       });
 
       accessToken = newUser.generateJWT();

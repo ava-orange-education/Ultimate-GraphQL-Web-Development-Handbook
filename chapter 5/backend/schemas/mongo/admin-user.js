@@ -12,7 +12,7 @@ const { Schema, model } = mongoose;
 
 const SECRET = "my-secret-jwt-password";
 
-const userSchema = new Schema({
+const adminUserSchema = new Schema({
   firstName: {
     type: String,
     required: true,
@@ -27,17 +27,10 @@ const userSchema = new Schema({
     unique: true,
     lowercase: true,
     trim: true,
-    index: true,
-  },
-  isAdmin: {
-    type: Boolean,
-    required: false,
-    default: false,
-    index: true,
   },
 });
 
-userSchema.methods.generateJWT = function () {
+adminUserSchema.methods.generateJWT = function () {
   const today = new Date();
   const expirationDate = new Date(today);
   expirationDate.setDate(today.getDate() + 60);
@@ -54,7 +47,7 @@ userSchema.methods.generateJWT = function () {
   );
 };
 
-userSchema.statics.verifyToken = async (token) => {
+adminUserSchema.statics.verifyToken = async (token) => {
   try {
     // Verify the token using the secret key
     const decoded = jwt.verify(token, SECRET);
@@ -63,6 +56,7 @@ userSchema.statics.verifyToken = async (token) => {
     if (decoded.exp && decoded.exp < currentTimestamp) {
       throw new Error("Token has expired");
     }
+
     // Extract and return relevant user data from the decoded token
     const { id, email, firstName, lastName } = decoded;
     // check whether user-name is present in system.
@@ -70,7 +64,7 @@ userSchema.statics.verifyToken = async (token) => {
     if (!user) {
       throw new Error("Admin user doesn't exist");
     }
-    return { ...user.toJSON(), id: user._id };
+    return { ...user, id };
   } catch (error) {
     console.error("Error", error);
     // If token verification fails (e.g., invalid token or expired token), throw an error
@@ -78,6 +72,6 @@ userSchema.statics.verifyToken = async (token) => {
   }
 };
 
-const AdminUser = model("User", userSchema);
+const AdminUser = model("AdminUser", adminUserSchema);
 
 export default AdminUser;
