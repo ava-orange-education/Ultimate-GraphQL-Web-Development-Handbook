@@ -1,0 +1,57 @@
+/* src/pages/storefront/HomePage.css */
+
+.homepage {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.main-content {
+  margin-bottom: 40px;
+}
+
+.featured,
+.categories {
+  margin-bottom: 30px;
+  overflow: auto;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.empty-screen {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  background-color: #f9f9f9;
+}
+
+.empty-screen p {
+  margin: 0;
+}
+
+.video-title {
+  margin-bottom: 0;
+}
