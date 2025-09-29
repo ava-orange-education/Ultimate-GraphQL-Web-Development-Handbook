@@ -1,11 +1,11 @@
 // Import necessary libraries for generating dummy data
-import faker from "faker"; // Library for generating fake data
+import { faker } from "@faker-js/faker"; // Library for generating fake data
 import { v4 as uuidv4 } from "uuid"; // Library for generating UUIDs
 
 // Dummy data for authors, posts, and comments
 const authors = Array.from({ length: 5 }, (_, index) => ({
   id: String(index + 1),
-  name: faker.name.findName(), // Generate a fake author name
+  name: faker.person.fullName(), // Generate a fake author name
   email: faker.internet.email(), // Generate a fake email
 }));
 

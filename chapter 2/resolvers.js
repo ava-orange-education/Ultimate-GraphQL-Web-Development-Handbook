@@ -1,11 +1,11 @@
 // Import any necessary libraries for generating dummy data
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 import { v4 as uuidv4 } from "uuid";
 
 // Dummy data for authors, posts, and comments
 const authors = Array.from({ length: 5 }, (_, index) => ({
   id: String(index + 1),
-  name: faker.name.findName(),
+  name: faker.person.fullName(),
   email: faker.internet.email(),
 }));
 
