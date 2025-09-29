@@ -22,7 +22,7 @@ export const getJsonFromLocalStorage = (key) => {
 // Function to extract YouTube video ID from URL
 export const getYoutubeVideoId = (videoUrl) => {
   const videoIdRegex =
-    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
   const match = videoUrl.match(videoIdRegex);
   return match ? match[1] : "";
 };

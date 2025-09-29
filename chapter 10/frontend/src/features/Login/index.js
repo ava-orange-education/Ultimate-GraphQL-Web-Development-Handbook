@@ -1,5 +1,6 @@
 // src/pages/admin/AdminLoginPage.js
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 import React from "react";
 import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";

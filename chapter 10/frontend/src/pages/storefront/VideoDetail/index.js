@@ -1,5 +1,6 @@
 import VideoDetail from "./VideoDetail";
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
 import { useParams } from "react-router";
 
 const VideoDetailQuery = gql`

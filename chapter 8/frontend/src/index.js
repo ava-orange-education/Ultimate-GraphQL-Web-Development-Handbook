@@ -1,9 +1,5 @@
-import {
-  ApolloClient,
-  ApolloProvider,
-  InMemoryCache,
-  createHttpLink,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
 import { setContext } from "@apollo/client/link/context";
 
 import { GoogleOAuthProvider } from "@react-oauth/google";

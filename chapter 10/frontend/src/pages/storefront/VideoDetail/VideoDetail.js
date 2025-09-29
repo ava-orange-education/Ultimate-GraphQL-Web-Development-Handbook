@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./VideoDetail.css";
 import { getYoutubeVideoId } from "../../../utils";
 import Header from "../../../features/Header/Header";
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 import VideoCard from "../../../elements/VideoCard/VideoCard";
 
 const CREATE_OR_UPDATE_RATING = gql`
