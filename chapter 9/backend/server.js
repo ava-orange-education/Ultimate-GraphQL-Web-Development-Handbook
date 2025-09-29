@@ -1,5 +1,5 @@
 // Import necessary modules
-import { expressMiddleware } from "@apollo/server/express4"; // Middleware for integrating Apollo Server with Express
+import { expressMiddleware } from "@as-integrations/express4"; // Middleware for integrating Apollo Server with Express
 import express from "express"; // Import Express framework
 import cors from "cors"; // CORS (Cross-Origin Resource Sharing) middleware for Express
 import bodyParser from "body-parser"; // Middleware to parse request bodies

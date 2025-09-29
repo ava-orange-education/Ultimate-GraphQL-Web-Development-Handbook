@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useMutation, useQuery, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client/react";
 import "./CreatePostForm.css"; // Import CSS file
 
 const CREATE_POST = gql`
@@ -78,27 +79,27 @@ const CreatePostForm = ({ setShowForm }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="create-post-form">
-      <div className="form-group">
+    <form onSubmit={handleSubmit} className='create-post-form'>
+      <div className='form-group'>
         <label>Title:</label>
         <input
-          type="text"
-          name="title"
+          type='text'
+          name='title'
           value={formData.title}
           onChange={handleChange}
           required
         />
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Body:</label>
         <textarea
-          name="body"
+          name='body'
           value={formData.body}
           onChange={handleChange}
           required
         ></textarea>
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Author:</label>
         {authorsLoading ? (
           <p>Loading authors...</p>
@@ -106,12 +107,12 @@ const CreatePostForm = ({ setShowForm }) => {
           <p>Error loading authors: {authorsError.message}</p>
         ) : (
           <select
-            name="authorId"
+            name='authorId'
             value={formData.authorId}
             onChange={handleChange}
             required
           >
-            <option value="">Select an author</option>
+            <option value=''>Select an author</option>
             {authorsData.allAuthors.map((author) => (
               <option key={author.id} value={author.id}>
                 {author.name}
@@ -120,7 +121,7 @@ const CreatePostForm = ({ setShowForm }) => {
           </select>
         )}
       </div>
-      <button type="submit" disabled={createLoading}>
+      <button type='submit' disabled={createLoading}>
         {createLoading ? "Creating..." : "Create Post"}
       </button>
       {createError && <p>Error: {createError.message}</p>}
