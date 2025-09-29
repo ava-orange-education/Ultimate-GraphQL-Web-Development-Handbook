@@ -1,4 +1,5 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
 import React, { useEffect, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -58,19 +59,19 @@ const Header = ({}) => {
 
   return (
     <header>
-      <div className="container mx-auto py-4 flex justify-between items-center">
-        <h1 onClick={navigateToHome} className="text-2xl font-bold logo">
+      <div className='container mx-auto py-4 flex justify-between items-center'>
+        <h1 onClick={navigateToHome} className='text-2xl font-bold logo'>
           Streamify Admin Panel
         </h1>
-        <div className="flex items-center">
+        <div className='flex items-center'>
           {!!showUploadBtn && (
-            <button onClick={handleUploadClick} className="btn-upload">
+            <button onClick={handleUploadClick} className='btn-upload'>
               Upload Video
             </button>
           )}
-          <div className="text-lg">
+          <div className='text-lg'>
             {firstName && lastName ? (
-              <span className="mr-2">
+              <span className='mr-2'>
                 Welcome, {firstName} {lastName}
               </span>
             ) : null}

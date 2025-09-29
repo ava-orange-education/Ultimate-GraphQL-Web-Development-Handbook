@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./VideoCard.css";
 
 const VideoCard = ({ video }) => {
-  const { _id, title, description, thumbnailUrl, createdDate } = video;
+  const { _id, title, description, thumbnailUrl } = video;
   return (
     <div className='video-card'>
       <Link className='video-link' to={`/video/${_id}`}>

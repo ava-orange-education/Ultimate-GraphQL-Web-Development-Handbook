@@ -3,15 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, gql, HttpLink } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000", // Backend server Url
+  link: new HttpLink({ uri: "http://localhost:4000" }), // Backend server Url
   cache: new InMemoryCache(),
 });
 

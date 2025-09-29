@@ -1,5 +1,6 @@
 // src/pages/admin/AdminLoginPage.js
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 import React from "react";
 import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";
@@ -27,8 +28,7 @@ const SIGNUP_GOOGLE = gql`
 const LoginPage = () => {
   const navigate = useNavigate();
 
-  const [signupGoogle, { loading: createLoading, error: createError }] =
-    useMutation(SIGNUP_GOOGLE, {});
+  const [signupGoogle] = useMutation(SIGNUP_GOOGLE, {});
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (response) => {

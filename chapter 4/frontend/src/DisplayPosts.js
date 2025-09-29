@@ -1,4 +1,5 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
 import React from "react";
 
 const GET_POSTS = gql`
@@ -22,10 +23,10 @@ const DisplayPosts = () => {
   if (error) return <p>Error : {error.message}</p>;
 
   return data.allPosts.map(({ id, body, title, author: { name } }) => (
-    <div key={id} class="post">
-      <div class="post-title">{title}</div>
-      <div class="post-body">{body}</div>
-      <div class="post-author">Author: {name}</div>
+    <div key={id} className='post'>
+      <div className='post-title'>{title}</div>
+      <div className='post-body'>{body}</div>
+      <div className='post-author'>Author: {name}</div>
     </div>
   ));
 };

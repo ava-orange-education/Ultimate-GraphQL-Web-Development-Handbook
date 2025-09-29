@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./VideoDetail.css";
 import { getYoutubeVideoId } from "../../../utils";
 import Header from "../../../features/Header/Header";
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 
 const CREATE_OR_UPDATE_RATING = gql`
   mutation Mutation($input: CreateOrUpdateRatingInput!) {
@@ -18,9 +19,7 @@ const CREATE_OR_UPDATE_RATING = gql`
 const VideoDetail = ({ data, myRating }) => {
   const [selectedRating, setSelectedRating] = useState(myRating?.rating || 0);
   const [hoveredRating, setHoveredRating] = useState(0);
-  const [createOrUpdateRating, { loading, error }] = useMutation(
-    CREATE_OR_UPDATE_RATING
-  );
+  const [createOrUpdateRating] = useMutation(CREATE_OR_UPDATE_RATING);
 
   const handleRatingSubmit = async (selectedRating) => {
     try {

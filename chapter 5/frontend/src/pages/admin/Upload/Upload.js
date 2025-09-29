@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 import "./Upload.css";
 import { getJsonFromLocalStorage } from "../../../utils";
 import { useNavigate } from "react-router-dom";
@@ -78,55 +79,55 @@ const UploadVideoForm = () => {
   return (
     <>
       <Header />
-      <div className="form-container">
+      <div className='form-container'>
         <h2>Upload Video Stream</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="title">Title:</label>
+          <div className='form-group'>
+            <label htmlFor='title'>Title:</label>
             <input
-              type="text"
-              name="title"
+              type='text'
+              name='title'
               value={formData.title}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
+          <div className='form-group'>
             <label>Description:</label>
             <textarea
-              name="description"
+              name='description'
               value={formData.description}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
+          <div className='form-group'>
             <label>Genre:</label>
             <input
-              type="text"
-              name="genre"
+              type='text'
+              name='genre'
               value={formData.genre}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
+          <div className='form-group'>
             <label>Thumbnail URL:</label>
             <input
-              type="text"
-              name="thumbnailUrl"
+              type='text'
+              name='thumbnailUrl'
               value={formData.thumbnailUrl}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
+          <div className='form-group'>
             <label>Video URL:</label>
             <input
-              type="text"
-              name="videoUrl"
+              type='text'
+              name='videoUrl'
               value={formData.videoUrl}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <button type="submit" disabled={loading}>
+          <div className='form-group'>
+            <button type='submit' disabled={loading}>
               {loading ? "Uploading..." : "Upload Video"}
             </button>
             {error && <p>Error: {error.message}</p>}

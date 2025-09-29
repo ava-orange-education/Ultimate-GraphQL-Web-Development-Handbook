@@ -1,5 +1,6 @@
 // src/pages/admin/AdminLoginPage.js
-import { gql, useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 import React from "react";
 import Header from "../../../features/Header/Header";
 
@@ -52,10 +53,10 @@ const AdminLoginPage = () => {
   return (
     <>
       <Header />
-      <div className="admin-login-page">
+      <div className='admin-login-page'>
         <h2>Admin Login</h2>
-        <button className="google-login-button" onClick={handleGoogleLogin}>
-          <FcGoogle className="google-icon" />
+        <button className='google-login-button' onClick={handleGoogleLogin}>
+          <FcGoogle className='google-icon' />
           <span>Login with Google</span>
         </button>
       </div>

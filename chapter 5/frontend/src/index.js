@@ -1,10 +1,10 @@
 import {
   ApolloClient,
-  ApolloProvider,
   createHttpLink,
   InMemoryCache,
   gql,
 } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
 import { setContext } from "@apollo/client/link/context";
 
 import React from "react";
@@ -42,7 +42,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <GoogleOAuthProvider clientId="114712028172-k4gfsrvhkb7bfkapj50gir7511p0iiaf.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId='114712028172-k4gfsrvhkb7bfkapj50gir7511p0iiaf.apps.googleusercontent.com'>
         <RouterProvider router={router} />
       </GoogleOAuthProvider>
       {/* <App /> */}
