@@ -1,0 +1,42 @@
+import VideoDetail from "./VideoDetail";
+import { gql } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
+import { useParams } from "react-router";
+
+const VideoDetailQuery = gql`
+  query FetchVideobyId($videoId: ID!) {
+    fetchVideobyId(id: $videoId) {
+      _id
+      averageRating
+      description
+      genre
+      numberOfRaters
+      thumbnailUrl
+      title
+      totalRating
+      videoUrl
+    }
+    fetchRating(videoId: $videoId) {
+      _id
+      rating
+      userId
+      videoId
+    }
+  }
+`;
+
+const VideoDetailWithData = () => {
+  const params = useParams();
+
+  const { loading, data } = useQuery(VideoDetailQuery, {
+    variables: { videoId: params.videoId },
+  });
+  if (!loading && data?.fetchVideobyId) {
+    return (
+      <VideoDetail data={data?.fetchVideobyId} myRating={data?.fetchRating} />
+    );
+  }
+  return <div>Loading...</div>;
+};
+
+export default VideoDetailWithData;

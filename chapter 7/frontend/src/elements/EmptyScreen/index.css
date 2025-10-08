@@ -1,0 +1,17 @@
+.empty-screen {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    background-color: #f9f9f9;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .empty-screen p {
+    margin: 0;
+  }
+  
+  

@@ -1,0 +1,61 @@
+/* Header Styles */
+header {
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.container .logo {
+  cursor: pointer;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.text-2xl {
+  font-size: 2rem; /* Increase font size for better visibility */
+}
+
+.font-bold {
+  font-weight: 700; /* Use a stronger font weight */
+}
+
+.text-lg {
+  font-size: 1.25rem; /* Increase font size for better readability */
+}
+
+.mr-2 {
+  margin-right: 1rem; /* Increase right margin for spacing */
+  margin-left: 2rem;
+}
+
+.btn-upload {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
